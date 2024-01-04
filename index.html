@@ -17,8 +17,7 @@
     <link rel="stylesheet" href="css/tailwind.css">
     <link rel="stylesheet" href="css/Style.css">
     <link rel="icon" href="img/djib-logo.jpg">
-
-	<script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
 
 </head>
@@ -178,7 +177,7 @@
                 </div>
                 
                 <div class="flex-1 rounded-xl p-12 pb-14 m-5 bg-black bg-opacity-50 tm-item-container">
-                    <form action="send_email.php" method="post" class="text-lg">
+                    <form onsubmit="sendEmail(); reset(); return false;" class="text-lg">
                         <input type="text" id="name" name="name" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="Nom *" required="" />
                         <input type="email" id="email" name="email" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="Email *" required="" />
                         <textarea rows="6" id="message" name="message" class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold" placeholder="Commentaire..." required=""></textarea>
@@ -212,8 +211,6 @@
 	function sendEmail(){
 	    Email.send({
    	 	Host : "smtp.gmail.com",
-    		Username : "ahmadialgie34@gmail.com",
-    		Password : "hoyomacan56",
     		To : 'ahmadialgie34@gmail.com',
     		From : document.getElementById("email").value,
     		Subject : "Nouvelle demande de formulaire de contact", 
